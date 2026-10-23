@@ -1,15 +1,14 @@
 # Home `/`
 
-Source: `03-page-index.md`.
+Source: `03-page-index.md`, answers in `04-open-questions.md`.
 
-Kept short. Everything else from the old home page has moved: service times → Visit; livestream, sermons, podcast, bulletin → Sermons & Media; home groups, giving and contact are reached via the nav and footer.
+Kept short. Everything else from the old home page has moved: service times → Visit only; livestream, sermons, podcast, bulletin → Sermons & Media; home groups, giving and contact are reached via the nav and footer.
 
 | Section | Content |
 |---|---|
-| Banner | Logo and church name only (no photo). Home only; other pages use the compact header |
-| Plan Your Visit | Prominent link → `/visit` (service times, directions, what to expect) |
-| About us | A short paragraph (new text needed) + link → `/about` |
-| What We Believe | The 3 paragraphs; links to Westminster Confession (pcaac.org) and the Apostles' and Nicene Creeds (trusted source TBD) |
+| Banner | Logo and church name only (no hero photo). Home only; other pages use the compact header |
+| Plan Your Visit | Prominent link → `/visit` (service times, directions, what to expect). No service times on Home |
+| About us | `[TBD: short "About us" paragraph]` + link → `/about` |
+| What We Believe | The 3 paragraphs; inline links to the Westminster Confession (pcaac.org) and to the Apostles' and Nicene Creeds on our own site (`/creeds`) |
 
-## Decisions to confirm
-- Short "About us" text (needs writing).
+**Meta description (draft):** Wallace Presbyterian Church is a PCA congregation in College Park, MD. Join us Sundays: Sunday School at 9:15 AM, worship at 10:30 AM.
