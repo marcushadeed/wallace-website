@@ -10,7 +10,7 @@ Source: `../content-inventory.md`, answers in `04-open-questions.md`.
 - Leave out anything that goes stale unless someone maintains it
 
 ## Header
-- Logo → `/`. Use the existing PNG for now; Marcus is making an SVG version. On Home the banner replaces the header logo, so it doesn't appear twice; the nav stays
+- Logo → `/` (SVG). On Home the banner replaces the header logo, so it doesn't appear twice; the nav stays
 - Nav: Plan Your Visit · About · Sermons & Media · Home Groups · Events · Give · Contact
 - No livestream button in the header; the livestream lives on Sermons & Media
 

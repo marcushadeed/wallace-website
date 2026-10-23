@@ -60,16 +60,16 @@ Commented examples at the bottom of each empty file show the shape. The field na
 Links: write root-relative URLs (`/visit/`, `/assets/img/x.png`). `HtmlBasePlugin` adds the GitHub Pages sub-path automatically in `href`/`src`. For absolute URLs (OG, canonical, meta refresh, JSON-LD) use `{{ build.url }}` + path.
 
 ## Styling conventions
-- **Direction (open question 5):** cues from the logo, but bolder: logo blue `#4778B7` as accent, deep navy bands, large serif headings.
+- **Direction (open question 5):** cues from the logo, but bolder: logo blue `#224C86` as accent, deep navy bands, large serif headings.
 - Everything uses the tokens at the top of `style.css`: `--color-*`, `--step-*` (type scale, body is 18px), `--space-*`, `--container`, `--measure`. Don't hard-code colors or sizes.
-- `--color-blue` is only for accents and rules. Link/text blue on white or tint is `--color-blue-dark` (contrast).
+- `--color-blue` (logo blue) is for accents, rules and the focus ring on white/tint; links use `--color-blue-dark` (currently the same value). On navy use `--color-blue-light`, since the logo blue doesn't show there.
 - Headings: `--font-serif`, navy. Body: `--font-sans`.
 - Components: `.button` (navy), `.button--light` (on navy bands), `.button--large`, `.more-link` ("More about … →"), `.lead`, `.prose`.
 - Section bands alternate: white → `section--tint` / `section--navy`. Home: tint banner → navy CTA → white → tint.
 - **Placeholders:** `<span class="tbd">[TBD: …]</span>`, yellow highlight. Keep them visible; don't invent content.
 - Mobile nav: below 64rem the `<nav>` collapses behind a "Menu" button, a sibling placed just before it (`nav.js` + `.js` class set inline in `<head>`). Escape closes it. Without JS the nav wraps.
 - Add page-specific CSS at the end of `style.css` under a `/* ---------- <Page> ---------- */` heading.
-- The logo is a 265×75 PNG with a white background (`mix-blend-mode: multiply` on the Home banner hides the white on tint). When Marcus's SVG arrives: replace it in `header.njk` and `index.njk`, and regenerate `og-image.png`, `apple-touch-icon.png`, `favicon-32.png` and `favicon.ico` from it.
+- The logo is `assets/img/logo.svg` (2084×555, one color `#224C86`), used in `header.njk` and `index.njk`. `favicon.svg` is the same file cropped to the circle mark (`viewBox="0 0 555 555"`, wordmark subpaths removed). Rendered from them with `inkscape` (+ `convert` for the `.ico`): `logo.png` (600w, for schema.org), `favicon-32.png`, `apple-touch-icon.png` (144px mark on 180×180 white), `src/favicon.ico` (16/32/48), and `og-image.png` (1200×630: tint bands, white middle with the logo, `--color-blue-light` rule, navy bar). Regenerate all of them if the logo changes.
 
 ## Metadata
 - Per page: `title`, `description` front matter → `<title>`, meta description, OG title/description/url, canonical. OG image is `assets/img/og-image.png` for every page.

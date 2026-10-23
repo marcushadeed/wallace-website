@@ -27,16 +27,17 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  /* Colors: from the logo blue (#4778B7), with deep navy for bold bands. */
-  --color-blue: #4778b7;        /* logo blue: accents, rules (not body-size text on white) */
-  --color-blue-dark: #2f5e9c;   /* links and small blue text on white/tint (6.5:1) */
+  /* Colors: from the SVG logo's single blue (#224C86), with deep navy for bold bands. */
+  --color-blue: #224c86;        /* logo blue: accents, rules, focus ring on white/tint */
+  --color-blue-dark: #224c86;   /* links and small blue text on white/tint (8.6:1) */
+  --color-blue-light: #6f9ad3;  /* accents on navy (the logo blue doesn't show there) */
   --color-navy: #13294b;        /* bands, footer, buttons */
   --color-navy-light: #1e3c6b;  /* hover on navy */
   --color-ink: #1b1f24;         /* body text */
   --color-muted: #4f5866;       /* secondary text */
   --color-bg: #ffffff;
-  --color-tint: #eef3fa;        /* light sections */
-  --color-line: #d5deea;        /* borders */
+  --color-tint: #edf2f9;        /* light sections */
+  --color-line: #d3ddeb;        /* borders */
   --color-on-navy: #ffffff;
   --color-on-navy-muted: #c9d6ea;
   --color-on-navy-link: #9dbbe3;
@@ -99,6 +100,7 @@ address { font-style: normal; }
 a { color: var(--color-blue-dark); text-underline-offset: 0.15em; }
 a:hover { color: var(--color-navy); }
 :focus-visible { outline: 3px solid var(--color-blue); outline-offset: 2px; }
+.section--navy :focus-visible, .site-footer :focus-visible { outline-color: var(--color-blue-light); }
 
 .skip-link {
   position: absolute; left: var(--space-s); top: -10rem;
@@ -134,7 +136,7 @@ a:hover { color: var(--color-navy); }
   gap: var(--space-s); padding-block: var(--space-s);
 }
 .site-header--no-logo .site-header__inner { justify-content: center; }
-.site-header__logo img { width: 220px; }
+.site-header__logo img { width: 240px; }
 .site-nav__list {
   display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-m);
   list-style: none; margin: 0; padding: 0;
@@ -168,7 +170,7 @@ a:hover { color: var(--color-navy); }
 /* ---------- Footer ---------- */
 .site-footer {
   background: var(--color-navy); color: var(--color-on-navy-muted);
-  border-top: 6px solid var(--color-blue);
+  border-top: 6px solid var(--color-blue-light);
   padding-block: var(--space-xl);
   font-size: var(--step--1);
 }
@@ -211,10 +213,7 @@ a:hover { color: var(--color-navy); }
   text-align: center;
 }
 .banner h1 { margin: 0; }
-.banner__logo {
-  width: min(100%, 30rem); margin-inline: auto;
-  mix-blend-mode: multiply; /* the PNG has a white background */
-}
+.banner__logo { width: min(100%, 30rem); margin-inline: auto; }
 .visit-cta { text-align: center; }
 .visit-cta h2 { font-size: var(--step-4); }
 .visit-cta p { color: var(--color-on-navy-muted); margin-inline: auto; }

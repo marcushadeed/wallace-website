@@ -17,6 +17,7 @@ Write answers after each **A:**.
     **A:**
 5. Visual style: any colors, fonts or sites you like, or should we take cues from the logo?
     **A:** Take cues from the logo, but bolder: logo blue #4778B7 with deep navy bands/sections and larger type for a more modern feel. (Marcus, 2026-10-22)
+    **Update:** Marcus's SVG logo uses a single blue, #224C86, which replaces #4778B7 as the logo blue/accent. (2026-10-23)
 6. The staff list has a Treasurer (treasurer@) and a Receipts Administrator (receiptsadministrator@), but Donate uses "Assistant Treasurer" / assistanttreasurer@. Is that address still in use? Who should Donate name for mailed checks, envelopes and questions?
     **A:** 
 
@@ -28,7 +29,7 @@ Marked `[TBD: …]` in the page files.
 | Page | Placeholder |
 |---|---|
 | Site-wide, Contact | Newsletter signup link (after Q2) |
-| Site-wide | SVG logo (Marcus making it; PNG until then) |
+| Site-wide | ~~SVG logo~~ done (2026-10-23) |
 | Home | Short "About us" paragraph |
 | Visit | Adult Sunday School classes (to be consolidated) |
 | Visit | Youth group Sunday evening time |
