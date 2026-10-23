@@ -9,7 +9,7 @@ Each session runs in a fresh Claude Code session. Start it with:
 | 1 | Foundation + Home | ☑ 2026-10-22. Eleventy + Pages CMS. Data files staff/leadership/homeGroups/hgCalendar are empty for Session 2 to fill. The deploy workflow and Pages CMS are written but not tried against a real repo yet (Session 4) |
 | 2 | Visit, About, Home Groups, Media | ☑ 2026-10-23. Data files filled. 8 home-group photos (the Chinese group never had one, not 9). Map and SoundCloud embeds don't render in headless Chrome; check them in a real browser. `[TBD]`s left: adult Sunday School, youth times/places, HATC address, mission partners |
 | 3 | Donate, Events, Contact, Creeds | ☑ 2026-10-23. All 4 pages built. New `site.yml` fields (in the CMS): `giving`, `deacon_fund_contact`, `calendar_embed_url`. `[TBD]`s left: Events calendar embed (Q1), Deacon Fund contact, newsletter link (Q2). Donate still names the Assistant Treasurer (Q6 open). Creed wording (traditional BCP / Trinity Hymnal) wasn't specified; confirm with Marcus |
-| 4 | Verification | ☐ |
+| 4 | Verification | ☑ 2026-10-23. All external links resolve (PayPal button IDs confirmed via `paypal.com/donate/?hosted_button_id=`, which names Wallace; curl gets 403 on `cgi-bin/webscr`). Redirects, meta/OG, nav, alt text, heading order and contrast (lowest 5.0:1) pass. One fix: Donate overflowed at 320px (long email), now wraps. Deployed to https://marcushadeed.github.io/wallace-website/. Not done: a Pages CMS sign-in and test save (needs Marcus) |
 
 ---
 

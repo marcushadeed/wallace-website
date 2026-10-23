@@ -10,7 +10,7 @@ Run from `new_site/` (Node 24, already installed via nvm).
 - `npm start`: dev server with live reload at http://localhost:8080
 - `npm run build`: build to `_site/`
 - Test a GitHub Pages sub-path build: `PATH_PREFIX=/repo/ SITE_URL=https://user.github.io/repo SITE_NOINDEX=true npm run build`
-- Deploy: push to `main`; `.github/workflows/deploy.yml` builds and deploys. `new_site/` is meant to be the repo root. One-time repo setting: Settings → Pages → Source: GitHub Actions. Not deployed yet (Session 4).
+- Deploy: push to `main`; `.github/workflows/deploy.yml` builds and deploys. `new_site/` is meant to be the repo root. Repo `marcushadeed/wallace-website`, Pages source is GitHub Actions. Live dev copy: https://marcushadeed.github.io/wallace-website/ (deployed and smoke-tested in Session 4).
 - Preview at phone width: `google-chrome --headless=new --hide-scrollbars --window-size=390,3200 --screenshot=out.png <url>`. Headless Chrome's minimum viewport is 500px, so a `scrollWidth` check reads 500, not 390; trust the screenshot.
 
 ## Where things live
@@ -72,6 +72,7 @@ Links: write root-relative URLs (`/visit/`, `/assets/img/x.png`). `HtmlBasePlugi
   - `.details` (`<dl>` label/value grid), `.embed` (iframes: SoundCloud, map, calendar), `.map` (4:3), `.visually-hidden`
   - `.people` (name / role / email list: About staff, Contact), `.fine-print` (small muted text), `.notice` (white box with navy rule for warnings; Donate's ACH note)
   - `h2 + .split` gets top spacing, so a section heading can sit over two columns
+  - `mailto:` links (not buttons) wrap anywhere, so long addresses fit at 320px
 - Maps: `site.address | mapEmbedUrl` (keyless Google Maps embed) and `| directionsUrl`.
 - Section bands alternate: white → `section--tint` / `section--navy`. Home: tint banner → navy CTA → white → tint.
 - Creeds use the traditional (BCP / Trinity Hymnal) wording, chosen in Session 3; swap if the church uses another version.
@@ -94,7 +95,7 @@ Links: write root-relative URLs (`/visit/`, `/assets/img/x.png`). `HtmlBasePlugi
 - Image uploads go to `src/assets/img/uploads/` and are stored as `/assets/img/uploads/<file>`. The home-group photos are in `src/assets/img/uploads/home-groups/<name>.jpg` (converted from the old site's WebP, max 1000px, shown square-cropped).
 - Pages CMS rewrites the YAML on save, so comments in data files may be lost. Don't put anything important in comments.
 - When you add or rename a data field, update `.pages.yml` to match.
-- Not yet tested against a live repo (needs the GitHub repo from Session 4).
+- The repo exists now, but signing in to Pages CMS and saving an edit hasn't been tried yet (it needs Marcus's GitHub login).
 
 ## Old site
 Mirror in `../old_site/`. Images are under `images.squarespace-cdn.com/content/v1/6a1f0be59c378c191f8c9f32/<id>/<name>`. The plain filename is the original, but the files are **WebP despite `.jpg`/`.png` names**. Convert them (e.g. `python3 -I -c "from PIL import Image; Image.open(src).save(dst)"`) or save them with a `.webp` extension.
