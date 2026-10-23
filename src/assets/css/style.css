@@ -99,6 +99,7 @@ p, ul, ol, address { margin: 0 0 var(--space-s); }
 address { font-style: normal; }
 a { color: var(--color-blue-dark); text-underline-offset: 0.15em; }
 a:hover { color: var(--color-navy); }
+a[href^="mailto:"]:not(.button) { overflow-wrap: anywhere; } /* long addresses at 320px */
 :focus-visible { outline: 3px solid var(--color-blue); outline-offset: 2px; }
 .section--navy :focus-visible, .site-footer :focus-visible { outline-color: var(--color-blue-light); }
 
