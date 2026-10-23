@@ -14,15 +14,15 @@ Source: `03-page-index.md`, answers in `04-open-questions.md`.
 
 ## Children & youth
 - **Nursery:** infants to 3 years old, during Sunday School and the whole service. First floor, children's wing
-- **During the service:** children age 4 through 2nd grade `[TBD: what they go to in the second half of the service]`
+- **Children's church:** during the second half of the service, for age 4 through 2nd grade. Second floor, children's wing (same as kids' Sunday School)
 - **Sunday School (9:15 AM):** separate classes by age:
   - Kids, age 4 – grade 6: second floor, children's wing
   - Youth, grades 7–12
   - Adults: `[TBD: adult Sunday School classes — to be consolidated]`
 - **Youth (grades 7–12):**
   - Youth group every Sunday evening at `[TBD: time]`, at HATC (House at the Crossroads) `[TBD: HATC address]`
-  - Men's Bible study: `[TBD: location, leaders, day/time]`
-  - Women's Bible study, led by Rebecca Hadeed and Hannah Shick, every Wednesday at `[TBD: time]` PM at `[TBD: location]`
+  - Youth men's Bible study: `[TBD: location, leaders, day/time]`
+  - Youth women's Bible study, led by Rebecca Hadeed and Hannah Schick, every Wednesday at `[TBD: time]` PM at `[TBD: location]`
   - Retreats (details on Events)
 
 **Meta description (draft):** Planning a visit to Wallace Presbyterian Church? Service times, what to expect, parking, accessibility, and programs for children and youth.
