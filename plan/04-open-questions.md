@@ -16,7 +16,7 @@ Write answers after each **A:**.
 4. Email: is `info@` / `assistanttreasurer@` / `duguid@` etc. mail hosted somewhere independent of Squarespace? (Moving off Squarespace must not break it.)
     **A:**
 5. Visual style: any colors, fonts or sites you like, or should we take cues from the logo?
-    **A:**
+    **A:** Take cues from the logo, but bolder: logo blue #4778B7 with deep navy bands/sections and larger type for a more modern feel. (Marcus, 2026-10-22)
 6. The staff list has a Treasurer (treasurer@) and a Receipts Administrator (receiptsadministrator@), but Donate uses "Assistant Treasurer" / assistanttreasurer@. Is that address still in use? Who should Donate name for mailed checks, envelopes and questions?
     **A:** 
 

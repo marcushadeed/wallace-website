@@ -1,0 +1,27 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__church">
+      <p class="site-footer__name">{{ site.name }}</p>
+      <address>
+        {{ site.address.street }}<br>
+        {{ site.address.city }}, {{ site.address.region }} {{ site.address.postal_code }}<br>
+        <a href="{{ site.phone | telHref }}">{{ site.phone }}</a> · <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </address>
+      <p><a href="{{ site.denomination.url }}">{{ site.denomination.text }}</a></p>
+    </div>
+    <div class="site-footer__links">
+      <h2 class="site-footer__heading">Follow us</h2>
+      <ul class="site-footer__social">
+        {%- for s in site.social %}
+        <li><a href="{{ s.url }}">{{ s.name }}</a></li>
+        {%- endfor %}
+      </ul>
+      <h2 class="site-footer__heading">Newsletter</h2>
+      {%- if site.newsletter_url %}
+      <p><a href="{{ site.newsletter_url }}">Sign up for the newsletter</a></p>
+      {%- else %}
+      <p><span class="tbd">[TBD: newsletter signup link]</span></p>
+      {%- endif %}
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,35 @@
+# Church-wide details used in the header, footer, metadata and schema.org markup.
+name: Wallace Presbyterian Church
+denomination:
+  text: A Congregation in the Presbyterian Church in America
+  url: https://pcanet.org
+address:
+  street: 3725 Metzerott Road
+  city: College Park
+  region: MD
+  postal_code: "20740"
+  country: US
+phone: 301-935-5900
+email: info@wallacepca.org
+services:
+  - name: Sunday School
+    day: Sunday
+    time: "9:15 AM"
+    start: "09:15"
+  - name: Worship Service
+    day: Sunday
+    time: "10:30 AM"
+    start: "10:30"
+social:
+  - name: YouTube
+    url: https://www.youtube.com/@wallacepresbyterianchurch
+  - name: SoundCloud
+    url: https://soundcloud.com/wallacepresbyterianchurch
+  - name: Spotify
+    url: https://open.spotify.com/show/2cWYm4jCl8oU0fEirRIiRi
+  - name: Facebook
+    url: https://www.facebook.com/wallacepcachurch/
+  - name: Instagram
+    url: https://www.instagram.com/wallacepresbyterian/
+# Leave empty until it's decided what sends the newsletter (open question 2).
+newsletter_url: ""

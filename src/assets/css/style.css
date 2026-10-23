@@ -1,0 +1,220 @@
+/* Wallace Presbyterian Church: one stylesheet for the whole site.
+   Tokens first, then base elements, layout, site-wide parts, components, pages.
+   Use the tokens; don't hard-code colors, sizes or spacing below them. */
+
+/* ---------- Fonts (vendored from @fontsource-variable) ---------- */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/source-serif-4-latin-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/source-sans-3-latin-wght-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: italic;
+  font-weight: 200 900;
+  font-display: swap;
+  src: url("../fonts/source-sans-3-latin-wght-italic.woff2") format("woff2");
+}
+
+/* ---------- Tokens ---------- */
+:root {
+  /* Colors: from the logo blue (#4778B7), with deep navy for bold bands. */
+  --color-blue: #4778b7;        /* logo blue: accents, rules (not body-size text on white) */
+  --color-blue-dark: #2f5e9c;   /* links and small blue text on white/tint (6.5:1) */
+  --color-navy: #13294b;        /* bands, footer, buttons */
+  --color-navy-light: #1e3c6b;  /* hover on navy */
+  --color-ink: #1b1f24;         /* body text */
+  --color-muted: #4f5866;       /* secondary text */
+  --color-bg: #ffffff;
+  --color-tint: #eef3fa;        /* light sections */
+  --color-line: #d5deea;        /* borders */
+  --color-on-navy: #ffffff;
+  --color-on-navy-muted: #c9d6ea;
+  --color-on-navy-link: #9dbbe3;
+  --color-tbd-bg: #fff4cc;
+  --color-tbd-ink: #6b4e00;
+
+  /* Type */
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --step--1: 0.95rem;
+  --step-0: 1.125rem;                                   /* body: 18px */
+  --step-1: 1.375rem;
+  --step-2: clamp(1.6rem, 1.25rem + 1.5vw, 2.125rem);   /* h3 / large lead */
+  --step-3: clamp(2rem, 1.4rem + 2.6vw, 3rem);          /* h2 */
+  --step-4: clamp(2.5rem, 1.6rem + 4vw, 4rem);          /* h1 */
+  --leading: 1.6;
+  --leading-tight: 1.15;
+  --measure: 40rem;                                     /* max width of running text */
+
+  /* Spacing */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --container: 72rem;
+
+  --radius: 6px;
+  --nav-breakpoint: 64rem; /* reference only; media queries repeat the value */
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: var(--leading);
+}
+img { max-width: 100%; height: auto; display: block; }
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 650;
+  line-height: var(--leading-tight);
+  color: var(--color-navy);
+  margin: 0 0 var(--space-s);
+  text-wrap: balance;
+}
+h1 { font-size: var(--step-4); }
+h2 { font-size: var(--step-3); }
+h3 { font-size: var(--step-2); }
+p, ul, ol, address { margin: 0 0 var(--space-s); }
+address { font-style: normal; }
+a { color: var(--color-blue-dark); text-underline-offset: 0.15em; }
+a:hover { color: var(--color-navy); }
+:focus-visible { outline: 3px solid var(--color-blue); outline-offset: 2px; }
+
+.skip-link {
+  position: absolute; left: var(--space-s); top: -10rem;
+  background: var(--color-navy); color: var(--color-on-navy);
+  padding: var(--space-xs) var(--space-s); z-index: 10;
+}
+.skip-link:focus { top: var(--space-s); }
+
+/* ---------- Layout ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section { padding-block: var(--space-xl); }
+.section--tint { background: var(--color-tint); }
+.section--navy { background: var(--color-navy); color: var(--color-on-navy); }
+.section--navy h2, .section--navy h3 { color: var(--color-on-navy); }
+.section--navy a:not(.button) { color: var(--color-on-navy-link); }
+.prose { max-width: var(--measure); }
+.prose > :last-child { margin-bottom: 0; }
+.lead { font-size: var(--step-1); }
+
+/* ---------- Header + nav ---------- */
+.site-header {
+  background: var(--color-bg);
+  border-top: 6px solid var(--color-navy);
+  border-bottom: 1px solid var(--color-line);
+}
+.site-header__inner {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--space-s); padding-block: var(--space-s);
+}
+.site-header--no-logo .site-header__inner { justify-content: center; }
+.site-header__logo img { width: 220px; }
+.site-nav__list {
+  display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-m);
+  list-style: none; margin: 0; padding: 0;
+}
+.site-nav__list a {
+  display: block; padding-block: var(--space-2xs);
+  color: var(--color-navy); font-weight: 600; text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+.site-nav__list a:hover { border-bottom-color: var(--color-blue); }
+.site-nav__list a[aria-current="page"] { border-bottom-color: var(--color-navy); }
+.site-nav__toggle {
+  font: inherit; font-weight: 600; color: var(--color-on-navy); background: var(--color-navy);
+  border: 0; border-radius: var(--radius); padding: var(--space-xs) var(--space-s); cursor: pointer;
+}
+
+/* Small screens: the toggle (a sibling just before <nav>) shows and the nav
+   collapses below the logo row. Without JS the nav just wraps. */
+@media (max-width: 64rem) {
+  .js .site-nav__toggle { display: block; }
+  .js .site-header--no-logo .site-header__inner { justify-content: flex-end; }
+  .js .site-nav { display: none; flex-basis: 100%; }
+  .js .site-nav__toggle[aria-expanded="true"] + .site-nav { display: block; }
+  .js .site-nav__list { flex-direction: column; gap: 0; }
+  .js .site-nav__list a { padding-block: var(--space-xs); border-bottom: 1px solid var(--color-line); }
+}
+@media (min-width: 64.0625rem) {
+  .site-nav__toggle { display: none !important; }
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--color-navy); color: var(--color-on-navy-muted);
+  border-top: 6px solid var(--color-blue);
+  padding-block: var(--space-xl);
+  font-size: var(--step--1);
+}
+.site-footer a { color: var(--color-on-navy); }
+.site-footer a:hover { color: var(--color-on-navy-link); }
+.site-footer__inner { display: grid; gap: var(--space-l); }
+@media (min-width: 48rem) { .site-footer__inner { grid-template-columns: 1fr 1fr; } }
+.site-footer__name { font-family: var(--font-serif); font-size: var(--step-1); color: var(--color-on-navy); font-weight: 650; }
+.site-footer__heading {
+  font-family: var(--font-sans); font-size: var(--step--1); color: var(--color-on-navy);
+  text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-xs);
+}
+.site-footer__social { display: flex; flex-wrap: wrap; gap: var(--space-xs) var(--space-m); list-style: none; padding: 0; }
+
+/* ---------- Components ---------- */
+.button {
+  display: inline-block;
+  font-weight: 700; text-decoration: none; line-height: 1.2;
+  padding: 0.8em 1.4em; border-radius: var(--radius);
+  background: var(--color-navy); color: var(--color-on-navy);
+  border: 2px solid var(--color-navy);
+}
+.button:hover { background: var(--color-navy-light); border-color: var(--color-navy-light); color: var(--color-on-navy); }
+.button--light { background: var(--color-bg); color: var(--color-navy); border-color: var(--color-bg); }
+.button--light:hover { background: var(--color-tint); border-color: var(--color-tint); color: var(--color-navy); }
+.button--large { font-size: var(--step-1); }
+
+.more-link { font-weight: 700; }
+
+/* Visible placeholder for content still to come. Keep [TBD: …] text inside. */
+.tbd {
+  background: var(--color-tbd-bg); color: var(--color-tbd-ink);
+  padding: 0.1em 0.35em; border-radius: 3px; font-weight: 600;
+}
+
+/* ---------- Home ---------- */
+.banner {
+  background: var(--color-tint);
+  padding-block: var(--space-2xl);
+  text-align: center;
+}
+.banner h1 { margin: 0; }
+.banner__logo {
+  width: min(100%, 30rem); margin-inline: auto;
+  mix-blend-mode: multiply; /* the PNG has a white background */
+}
+.visit-cta { text-align: center; }
+.visit-cta h2 { font-size: var(--step-4); }
+.visit-cta p { color: var(--color-on-navy-muted); margin-inline: auto; }

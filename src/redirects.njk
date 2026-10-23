@@ -1,0 +1,22 @@
+---
+pagination:
+  data: redirects
+  size: 1
+  alias: redirect
+permalink: "{{ redirect.from }}index.html"
+eleventyExcludeFromCollections: true
+---
+{#- Forwarding pages for old URLs (GitHub Pages has no server-side redirects). Edit src/_data/redirects.yml. -#}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting…</title>
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="{{ build.url }}{{ redirect.to }}">
+  <meta http-equiv="refresh" content="0; url={{ build.url }}{{ redirect.to }}">
+</head>
+<body>
+  <p>This page has moved to <a href="{{ redirect.to }}">{{ build.url }}{{ redirect.to }}</a>.</p>
+</body>
+</html>

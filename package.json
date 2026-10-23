@@ -1,0 +1,15 @@
+{
+  "name": "wallace-site",
+  "description": "Wallace Presbyterian Church website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -rf _site"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "js-yaml": "^5.5.0"
+  },
+  "private": true
+}

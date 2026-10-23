@@ -1,0 +1,2 @@
+{#- schema.org Church markup, built from site.yml. Included when a page sets `schema: true`. -#}
+<script type="application/ld+json">{{ site | churchSchema(build.url) | safe }}</script>

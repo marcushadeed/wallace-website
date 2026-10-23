@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  # Service times come from site.yml so they stay current when edited in the CMS.
+  description: "Wallace Presbyterian Church is a PCA congregation in College Park, MD. Join us {{ site.services | serviceTimes }}."
+hide_header_logo: true
+schema: true
+---
+<section class="banner">
+  <div class="container">
+    <h1><img class="banner__logo" src="/assets/img/logo.png" width="265" height="75" alt="{{ site.name }}"></h1>
+  </div>
+</section>
+
+<section class="section section--navy visit-cta">
+  <div class="container">
+    <h2>Join Us on Sunday</h2>
+    <p class="lead prose">Service times, directions, and what to expect on a Sunday.</p>
+    <a class="button button--light button--large" href="/visit/">Plan your visit</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container prose">
+    <h2>About Us</h2>
+    <p><span class="tbd">[TBD: short "About us" paragraph]</span></p>
+    <p><a class="more-link" href="/about/">More about Wallace →</a></p>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container prose">
+    <h2>What We Believe</h2>
+    <p>We believe that God sent his Son, Jesus Christ, to save us through his death and resurrection. This is the “gospel” – the good news that God has acted to save us. When we believe in Jesus, we are forgiven and accepted by God freely, not based on our own works, and his Spirit comes to dwell in our hearts, teaching us to love God and other people. We can only love because God has loved us first, and this good news about what he has done for us is the foundation for the whole Christian life.</p>
+    <p>The good news about Jesus is revealed in the Bible, which is God’s Word spoken to us, the only unerring source of truth for life and growth in Christ.</p>
+    <p>Wallace is a “Presbyterian” church, which means that we are joined to a wider network of churches for connection, fellowship, and accountability. It also means that we adhere to the <a href="https://www.pcaac.org/bco/westminster-confession/">Westminster Confession of Faith and Catechisms</a> as a faithful summary of what the Bible teaches, and you can consult them for more detail about what we teach here. We also adhere to the classic creeds of the church, including the <a href="/creeds/#apostles">Apostles’ Creed</a> and the <a href="/creeds/#nicene">Nicene Creed</a>.</p>
+  </div>
+</section>

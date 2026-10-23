@@ -1,0 +1,15 @@
+# Main navigation, in order.
+- label: Plan Your Visit
+  url: /visit/
+- label: About
+  url: /about/
+- label: Sermons & Media
+  url: /media/
+- label: Home Groups
+  url: /home-groups/
+- label: Events
+  url: /events/
+- label: Give
+  url: /donate/
+- label: Contact
+  url: /contact/

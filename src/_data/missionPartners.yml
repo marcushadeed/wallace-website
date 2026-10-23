@@ -1,0 +1,6 @@
+# Mission partners shown on About.
+# Do NOT list partners in security-sensitive fields by name, location or photo.
+partners: []
+#  - name: The Doe Family
+#    field: Teaching, Kenya
+#    url: https://example.org

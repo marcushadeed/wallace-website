@@ -1,0 +1,11 @@
+# Old Squarespace URLs. Each "from" gets a small page that forwards to "to".
+- from: /home-groups-2026/
+  to: /home-groups/
+- from: /labor-day/
+  to: /events/
+- from: /new-page/
+  to: /
+- from: /projects/
+  to: /
+- from: /cart/
+  to: /

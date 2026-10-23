@@ -1,0 +1,13 @@
+# Home Groups page. Replaced yearly.
+coordinator:
+  name: ""
+  email: ""
+groups: []
+#  - name: Doe
+#    focus: Bible Study
+#    when: Sun 5PM
+#    frequency: Twice a month
+#    location: College Park, MD
+#    childcare: Kids welcome   # optional
+#    photo: /assets/img/uploads/home-groups/doe.jpg
+#    signup_url: https://wallacepca.breezechms.com/form/doe

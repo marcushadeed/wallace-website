@@ -6,7 +6,7 @@ Each session runs in a fresh Claude Code session. Start it with:
 ## Progress
 | Session | Scope | Status |
 |---|---|---|
-| 1 | Foundation + Home | ☐ |
+| 1 | Foundation + Home | ☑ 2026-10-22. Eleventy + Pages CMS. Data files staff/leadership/homeGroups/hgCalendar are empty for Session 2 to fill. The deploy workflow and Pages CMS are written but not tried against a real repo yet (Session 4) |
 | 2 | Visit, About, Home Groups, Media | ☐ |
 | 3 | Donate, Events, Contact, Creeds | ☐ |
 | 4 | Verification | ☐ |

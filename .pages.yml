@@ -1,0 +1,147 @@
+# Pages CMS (https://pagescms.org) config: the editing screens for content that changes.
+# Each entry edits one YAML file in src/_data/. Saving commits to the repo,
+# which triggers the GitHub Pages deploy.
+media:
+  input: src/assets/img/uploads
+  output: /assets/img/uploads
+
+content:
+  - name: site
+    label: Church details
+    type: file
+    path: src/_data/site.yml
+    fields:
+      - { name: name, label: Church name, type: string }
+      - name: denomination
+        label: Denomination line (footer)
+        type: object
+        fields:
+          - { name: text, label: Text, type: string }
+          - { name: url, label: Link, type: string }
+      - name: address
+        label: Address
+        type: object
+        fields:
+          - { name: street, label: Street, type: string }
+          - { name: city, label: City, type: string }
+          - { name: region, label: State, type: string }
+          - { name: postal_code, label: ZIP code, type: string }
+          - { name: country, label: Country code, type: string }
+      - { name: phone, label: Phone, type: string }
+      - { name: email, label: Email, type: string }
+      - name: services
+        label: Sunday services
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - name: day
+            label: Day
+            type: select
+            required: true
+            options:
+              values: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
+          - { name: time, label: Time as shown, type: string, description: "e.g. 10:30 AM" }
+          - name: start
+            label: Start time (24-hour)
+            type: string
+            required: true
+            description: "e.g. 10:30 or 18:00. Used by search engines."
+            pattern:
+              regex: "^([01][0-9]|2[0-3]):[0-5][0-9]$"
+              message: "Use 24-hour HH:MM, e.g. 09:15 or 18:00"
+      - name: social
+        label: Social links
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: url, label: Link, type: string }
+      - { name: newsletter_url, label: Newsletter signup link, type: string }
+
+  - name: staff
+    label: Staff
+    type: file
+    path: src/_data/staff.yml
+    fields:
+      - name: staff
+        label: Staff
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: role, label: Role, type: string }
+          - { name: email, label: Email, type: string }
+
+  - name: leadership
+    label: Elders & deacons
+    type: file
+    path: src/_data/leadership.yml
+    fields:
+      - { name: elders, label: Elders, type: string, list: true }
+      - { name: elders_sabbatical, label: Elders on sabbatical, type: string, list: true }
+      - { name: elders_emeritus, label: Elders emeritus, type: string, list: true }
+      - { name: deacons, label: Deacons, type: string, list: true }
+      - { name: deacons_sabbatical, label: Deacons on sabbatical, type: string, list: true }
+
+  - name: missionPartners
+    label: Mission partners
+    type: file
+    path: src/_data/missionPartners.yml
+    fields:
+      - name: partners
+        label: Partners
+        description: Don't list partners in security-sensitive fields by name, location or photo.
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: field, label: Field / location, type: string }
+          - { name: url, label: Link, type: string }
+
+  - name: homeGroups
+    label: Home groups
+    type: file
+    path: src/_data/homeGroups.yml
+    fields:
+      - name: coordinator
+        label: Coordinator
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: email, label: Email, type: string }
+      - name: groups
+        label: Groups
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Group name, type: string }
+          - { name: focus, label: Focus, type: string }
+          - { name: when, label: When, type: string, description: "e.g. Sun 5PM" }
+          - { name: frequency, label: How often, type: string }
+          - { name: location, label: Location, type: string }
+          - { name: childcare, label: Childcare, type: string, description: Leave blank if not applicable }
+          - { name: photo, label: Photo, type: image }
+          - { name: signup_url, label: Sign-up link (Breeze), type: string }
+
+  - name: hgCalendar
+    label: Home group calendar
+    type: file
+    path: src/_data/hgCalendar.yml
+    fields:
+      - { name: title, label: Title, type: string, description: "e.g. Calendar Fall 2026 – Spring 2027" }
+      - { name: intro, label: Intro, type: text }
+      - name: seasons
+        label: Seasons
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Season, type: string }
+          - name: entries
+            label: Entries
+            type: object
+            list: true
+            fields:
+              - { name: when, label: When, type: string, description: "e.g. Week of September 13th" }
+              - { name: what, label: What, type: string }
+              - { name: note, label: Note, type: string, description: Optional }
