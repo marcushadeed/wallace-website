@@ -7,21 +7,18 @@ Write answers after each **A:**.
 
 ## Remaining questions
 
-### From the original list
-16. Does the church keep a Google Calendar? If yes, the public embed URL (or who owns it). Decides whether `/events` exists.
+1. Does the church keep a Google Calendar? If yes, the public embed URL (or who owns it). Decides whether `/events` exists.
     **A:**
-17. Newsletter: what sends it (Breeze, Mailchimp, email list…) and how? Signup link/form if one exists.
+2. Newsletter: what sends it (Breeze, Mailchimp, email list…) and how? Signup link/form if one exists.
     **A:**
-20. Who manages the Google Business Profile? (Needed to check it matches the new site.)
+3. Who manages the Google Business Profile? (Needed to check it matches the new site.)
     **A:**
-40. Email: is `info@` / `assistanttreasurer@` / `duguid@` etc. mail hosted somewhere independent of Squarespace? (Moving off Squarespace must not break it.)
+4. Email: is `info@` / `assistanttreasurer@` / `duguid@` etc. mail hosted somewhere independent of Squarespace? (Moving off Squarespace must not break it.)
     **A:**
-41. Visual style: any colors, fonts or sites you like, or should we take cues from the logo?
+5. Visual style: any colors, fonts or sites you like, or should we take cues from the logo?
     **A:**
-
-### Raised by the answers
-42. The staff list has a Treasurer (treasurer@) and a Receipts Administrator (receiptsadministrator@), but Donate uses "Assistant Treasurer" / assistanttreasurer@. Is that address still in use? Who should Donate name for mailed checks, envelopes and questions?
-    **A:**
+6. The staff list has a Treasurer (treasurer@) and a Receipts Administrator (receiptsadministrator@), but Donate uses "Assistant Treasurer" / assistanttreasurer@. Is that address still in use? Who should Donate name for mailed checks, envelopes and questions?
+    **A:** 
 
 ---
 
