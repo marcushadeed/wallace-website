@@ -21,7 +21,7 @@ Legend: **KEEP** = carry over · **UPDATE** = keep but fix or refresh · **DROP*
 | Meta descriptions | All empty | UPDATE. Write new ones |
 
 ## 2. Home page (`index.html`; `new-page.html` is a duplicate of it)
-- **Hero photo carousel** (6 images): IMG_8928, DSCF4031, IMG_4992-1, D50BE71C…jpg, IMG_4988, plus the logo. **KEEP** (choose the best ones)
+- **Hero photo carousel** (6 images): IMG_8928, DSCF4031, IMG_4992-1, D50BE71C…jpg, IMG_4988, plus the logo. **DROP** (replaced by a logo + name banner)
 - **Service times**: 9:15 AM Sunday School classes · 10:30 AM Sunday Morning Service. **KEEP** (most important info)
 - **Address line** repeated under the times. **KEEP**
 - **Livestream**: an image button ("Click Here for Service Livestream", photo of the pastor at communion) linking to `youtube.com/@wallacepresbyterianchurch/streams`. **KEEP the link**, and replace the text baked into the image with a real button

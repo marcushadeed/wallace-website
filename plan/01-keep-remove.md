@@ -29,7 +29,7 @@ The site should be easy to update, and should only *need* updating when somethin
 ### Home page
 | Item | Notes |
 |---|---|
-| Hero photo(s) | Static hero; **no carousel**. Choose from IMG_8928, DSCF4031, IMG_4992-1, D50BE71C…jpg, IMG_4988 (the photos may be redone) |
+| Banner | Logo and church name only; **no hero photo** |
 | Service times + address | 9:15 AM Sunday School · 10:30 AM Sunday Morning Service |
 | Livestream | Real button (no text baked into an image) → `https://www.youtube.com/@wallacepresbyterianchurch/streams` |
 | Recent sermons | Embedded SoundCloud playlist (id 2235055211) and a "more sermons" link → `https://soundcloud.com/wallacepresbyterianchurch/sets` |
@@ -67,14 +67,14 @@ Current group data is in `content-inventory.md` §3.
 Every existing contact carries over: info@, assistanttreasurer@wallacepca.org, duguid@wallacepca.org, and the phone number. They are **consolidated onto one contacts page**; its layout, and whether a contact is also repeated in context, are decided in the add/IA session.
 
 ### Images
-Carry over only: hero photo candidates, the logo, and the 9 group photos (from `old_site/images.squarespace-cdn.com/content/v1/6a1f0be59c378c191f8c9f32/`; the plain filename is the original). Many images will be redone. `old_site/` stays as the archive for anything else.
+Carry over only: the logo and the 9 group photos (from `old_site/images.squarespace-cdn.com/content/v1/6a1f0be59c378c191f8c9f32/`; the plain filename is the original). Many images will be redone. `old_site/` stays as the archive for anything else.
 
 ---
 
 ## REMOVE
 | Item | Why |
 |---|---|
-| Hero carousel | Use static photo(s) instead |
+| Hero photo / carousel | Replaced by the logo + name banner |
 | Text baked into images (livestream, home group, podcast buttons) | Replaced by real buttons |
 | PayPal logo image | Clutter (the info *links* stay) |
 | Labor Day page (`labor-day.html`) | The event is over. Whether to add an events or retreat page is for the add session |

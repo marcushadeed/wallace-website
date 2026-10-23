@@ -8,7 +8,7 @@ Lists every page on the new site and what goes on it. Items marked **(proposed)*
 ## Site-wide (every page)
 
 ### Header
-- Logo (PNG for now, SVG when we get one) → `/`
+- Logo (PNG for now, SVG when we get one) → `/`. On Home the banner replaces the header logo, so it doesn't appear twice; the nav stays
 - Nav: Plan Your Visit · About · Sermons & Media · Home Groups · Calendar · Give · Contact **(proposed)**
 - Livestream button → YouTube streams **(proposed)**
 
@@ -31,7 +31,7 @@ Kept short. Everything else from the old home page has moved: service times → 
 
 | Section | Content |
 |---|---|
-| Hero | One static photo (no carousel) |
+| Banner | Logo and church name only (no photo). Home only; other pages use the compact header |
 | Plan Your Visit | Prominent link → `/visit` (service times, directions, what to expect) |
 | About us | A short paragraph (new text needed) + link → `/about` |
 | What We Believe | The 3 paragraphs; links to Westminster Confession (pcaac.org) and the Apostles' and Nicene Creeds (trusted source TBD) |
