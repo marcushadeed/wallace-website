@@ -1,5 +1,33 @@
 # Staff shown on About (and Contact). No photos.
-staff: []
-#  - name: Rev. Jane Doe
-#    role: Senior Pastor
-#    email: doe@wallacepca.org
+# Visit looks up the "Facilities Manager" role for accessibility questions.
+staff:
+  - name: Rev. Ryan Moore
+    role: Senior Pastor
+    email: moore@wallacepca.org
+  - name: Rev. Dr. Jamie Duguid
+    role: Assistant Pastor
+    email: duguid@wallacepca.org
+  - name: Rev. Dr. David Miner
+    role: Assistant Pastor
+    email: miner@wallacepca.org
+  - name: Reed Berger
+    role: Youth Director
+    email: berger@wallacepca.org
+  - name: Lindsey Alder
+    role: Children's Ministries
+    email: childrensministries@wallacepca.org
+  - name: Michelle Hemphill
+    role: Children's Ministries
+    email: mhemphill@wallacepca.org
+  - name: Chris Pressau
+    role: Church Office
+    email: info@wallacepca.org
+  - name: Bob Werth
+    role: Facilities Manager
+    email: facilitiesmanager@wallacepca.org
+  - name: Dawn Miggins
+    role: Treasurer
+    email: treasurer@wallacepca.org
+  - name: Katie Waterhouse
+    role: Receipts Administrator
+    email: receiptsadministrator@wallacepca.org

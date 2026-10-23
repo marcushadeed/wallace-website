@@ -1,13 +1,77 @@
 # Home Groups page. Replaced yearly.
 coordinator:
-  name: ""
-  email: ""
-groups: []
-#  - name: Doe
-#    focus: Bible Study
-#    when: Sun 5PM
-#    frequency: Twice a month
-#    location: College Park, MD
-#    childcare: Kids welcome   # optional
-#    photo: /assets/img/uploads/home-groups/doe.jpg
-#    signup_url: https://wallacepca.breezechms.com/form/doe
+  name: Jamie Duguid
+  email: duguid@wallacepca.org
+groups:
+  - name: Chinese Language
+    focus: Survey of Biblical Teaching
+    when: Sunday, immediately following the service
+    frequency: Every week
+    location: At the church
+    childcare: ""
+    photo: ""
+    signup_url: https://wallacepca.breezechms.com/form/chinese-home-group
+  - name: Brockman
+    focus: The Apostles' Creed
+    when: Wednesday at 7 PM
+    frequency: Twice a month
+    location: The Brockman home in University Park, MD
+    childcare: Children are welcome to play on the floor where the adults are or in other rooms
+    photo: /assets/img/uploads/home-groups/brockman.jpg
+    signup_url: https://wallacepca.breezechms.com/form/brockman
+  - name: Burke
+    focus: Dinner, Sharing, and Prayer
+    when: Sunday, 5–7 PM
+    frequency: Twice a month
+    location: The Burke home in Cheverly, MD
+    childcare: Kids welcome!
+    photo: /assets/img/uploads/home-groups/burke.jpg
+    signup_url: https://wallacepca.breezechms.com/form/burke
+  - name: Carman
+    focus: Relationship Building. This group will focus on getting to know and care for one another, with some sermon discussion
+    when: Wednesday at 7 PM
+    frequency: Twice a month
+    location: The Carman home in Laurel, MD
+    childcare: ""
+    photo: /assets/img/uploads/home-groups/carman.jpg
+    signup_url: https://wallacepca.breezechms.com/form/carman
+  - name: Duguid-Dodson
+    focus: Bible Study
+    when: Sunday at 5 PM
+    frequency: Twice a month
+    location: The Duguid home in Cathedral Heights, DC
+    childcare: ""
+    photo: /assets/img/uploads/home-groups/duguid.jpg
+    signup_url: https://wallacepca.breezechms.com/form/duguid
+  - name: Iszler
+    focus: Bible Study
+    when: Thursday at 7 PM
+    frequency: Twice a month
+    location: The Iszler home in New Carrollton, MD
+    childcare: ""
+    photo: /assets/img/uploads/home-groups/iszler.jpg
+    signup_url: https://wallacepca.breezechms.com/form/iszler
+  - name: Lanterman
+    focus: Bible Study
+    when: Wednesday at 7:30 PM
+    frequency: Twice a month
+    location: Virtual
+    childcare: ""
+    photo: /assets/img/uploads/home-groups/lanterman.jpg
+    signup_url: https://wallacepca.breezechms.com/form/lanterman
+  - name: Miner
+    focus: Bible Study
+    when: Sunday at 5 PM
+    frequency: Twice a month
+    location: The Miner home in Berwyn Heights, MD
+    childcare: Children are welcome to play on the floor where we meet
+    photo: /assets/img/uploads/home-groups/miner.jpg
+    signup_url: https://wallacepca.breezechms.com/form/miner
+  - name: Rabenhorst
+    focus: Sermon Discussion
+    when: Sunday at 5 PM
+    frequency: Twice a month
+    location: The Rabenhorst home in University Park, MD
+    childcare: No special accommodations for children
+    photo: /assets/img/uploads/home-groups/rabenhorst.jpg
+    signup_url: https://wallacepca.breezechms.com/form/rabenhorst

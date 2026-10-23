@@ -1,0 +1,107 @@
+---
+layout: layouts/base.njk
+title: Plan Your Visit
+description: "Planning a visit to Wallace Presbyterian Church? Service times, what to expect, parking, accessibility, and programs for children and youth."
+---
+{%- set facilities = staff.staff | findBy("role", "Facilities Manager") -%}
+{%- set sundaySchool = site.services | findBy("name", "Sunday School") -%}
+<section class="page-header">
+  <div class="container">
+    <h1>Plan Your Visit</h1>
+    <p class="lead prose">We’d love to have you join us on a Sunday. Here’s what to know before you come.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <h2>Sunday Mornings</h2>
+      <ul class="times">
+        {%- for s in site.services %}
+        <li><span class="times__time">{{ s.time }}</span> {{ s.name }}</li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <div>
+      <h2>Where</h2>
+      <address class="lead">
+        {{ site.name }}<br>
+        {{ site.address.street }}<br>
+        {{ site.address.city }}, {{ site.address.region }} {{ site.address.postal_code }}
+      </address>
+      <p><a class="more-link" href="{{ site.address | directionsUrl }}">Get directions →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container prose">
+    <h2>What to Expect</h2>
+    <ul>
+      <li>The service usually ends about 12:15.</li>
+      <li>Our music includes both hymns and contemporary songs.</li>
+      <li>We celebrate Communion every week.</li>
+      <li>Dress is dressy casual.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <h2>Getting Here</h2>
+      <h3>Parking</h3>
+      <p>There’s plenty of free parking on the church grounds.</p>
+      <h3>Accessibility</h3>
+      <p>The building has a step-free entrance, an elevator, and hearing assistance.</p>
+      {%- if facilities %}
+      <p>Questions? Contact {{ facilities.name }}, {{ facilities.role }}, at <a href="mailto:{{ facilities.email }}">{{ facilities.email }}</a>.</p>
+      {%- else %}
+      <p>Questions? Contact the church office at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+      {%- endif %}
+    </div>
+    <iframe class="embed map" src="{{ site.address | mapEmbedUrl }}" title="Map showing {{ site.name }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    <h2>Children &amp; Youth</h2>
+    <div class="cards cards--wide">
+      <div class="card">
+        <h3>Nursery</h3>
+        <p>For infants to 3 years old, during Sunday School and the whole service. First floor, children’s wing.</p>
+      </div>
+      <div class="card">
+        <h3>Children’s Church</h3>
+        <p>For age 4 through 2nd grade, during the second half of the service. Second floor, children’s wing.</p>
+      </div>
+      <div class="card">
+        <h3>Sunday School</h3>
+        <p>Classes for every age{% if sundaySchool %} at {{ sundaySchool.time }}{% endif %}:</p>
+        <ul>
+          <li>Kids, age 4 – grade 6: second floor, children’s wing</li>
+          <li>Youth, grades 7–12</li>
+          <li>Adults: <span class="tbd">[TBD: adult Sunday School classes]</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Youth (Grades 7–12)</h3>
+        <ul>
+          <li>Youth group every Sunday evening at <span class="tbd">[TBD: time]</span>, at HATC (House at the Crossroads), <span class="tbd">[TBD: HATC address]</span></li>
+          <li>Youth men’s Bible study: <span class="tbd">[TBD: location, leaders, day/time]</span></li>
+          <li>Youth women’s Bible study, led by Rebecca Hadeed and Hannah Schick, every Wednesday at <span class="tbd">[TBD: time]</span> PM at <span class="tbd">[TBD: location]</span></li>
+          <li>Retreats: see <a href="/events/">Events</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--navy cta">
+  <div class="container">
+    <h2>Can’t Make It?</h2>
+    <p class="lead prose">Watch the livestream or listen to recent sermons online.</p>
+    <a class="button button--light button--large" href="/media/">Sermons &amp; media</a>
+  </div>
+</section>

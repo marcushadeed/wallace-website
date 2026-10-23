@@ -25,7 +25,7 @@ Run from `new_site/` (Node 24, already installed via nvm).
 | Fonts | `src/assets/fonts/` (vendored woff2: Source Serif 4, Source Sans 3) |
 | Redirects | `src/_data/redirects.yml` → `src/redirects.njk` makes a forwarding page per old URL |
 | Build-time values | `src/_data/build.js` (`build.url`, `build.noindex`, from env vars) |
-| Config | `eleventy.config.js` (YAML data, path prefix, passthrough, filters `telHref`, `serviceTimes`, `requireDescription`, `churchSchema`) |
+| Config | `eleventy.config.js` (YAML data, path prefix, passthrough, filters `telHref`, `serviceTimes`, `requireDescription`, `churchSchema`, `findBy`, `mapEmbedUrl`, `directionsUrl`) |
 
 ### Data files
 | File | Used by | Status |
@@ -33,13 +33,13 @@ Run from `new_site/` (Node 24, already installed via nvm).
 | `site.yml` | header, footer, schema.org, Visit/Contact | filled. Service times live here (`services`); `newsletter_url` empty until open question 2 |
 | `nav.yml` | header nav | filled (7 items). Not in the CMS |
 | `redirects.yml` | redirect pages | filled. Not in the CMS |
-| `staff.yml` | About, Contact | **empty, Session 2 fills** from `plan/pages/04-about.md` |
-| `leadership.yml` | About | **empty, Session 2 fills** (elders, deacons, sabbatical, emeritus lists) |
+| `staff.yml` | About, Visit, Contact | filled (10 staff). Visit finds the accessibility contact by role `Facilities Manager` (falls back to `site.email`) |
+| `leadership.yml` | About | filled |
 | `missionPartners.yml` | About | empty, `[TBD]` until Marcus supplies partners |
-| `homeGroups.yml` | Home Groups | **empty, Session 2 fills** from `plan/content-inventory.md` §3 (coordinator + 9 groups) |
-| `hgCalendar.yml` | Home Groups | **empty, Session 2 fills** from `../old_site/www.wallacepca.org/home-groups-2026.html` (title, intro, seasons → entries {when, what, note}) |
+| `homeGroups.yml` | Home Groups (Contact should reuse `coordinator`) | filled (coordinator + 9 groups). The Chinese Language group has no photo |
+| `hgCalendar.yml` | Home Groups | filled (Fall 2026 – Spring 2027). `intro` paragraphs split on blank lines; an entry with empty `when` renders as a break ("Break for Advent"). The section hides when `seasons` is empty |
 
-Commented examples at the bottom of each empty file show the shape. The field names must match `.pages.yml`.
+`missionPartners.yml` keeps a commented example of its shape. The field names must match `.pages.yml`.
 
 ## How to add a page
 1. Create `src/<slug>.njk` with front matter:
@@ -51,7 +51,8 @@ Commented examples at the bottom of each empty file show the shape. The field na
    ---
    ```
    Optional: `schema: true` (adds schema.org `Church` JSON-LD; Home has it), `hide_header_logo: true` (Home only).
-2. Write sections as `<section class="section">` (add `section--tint` or `section--navy` for bands) with a `<div class="container">` inside. Use `container prose` for a centred reading column.
+2. Start with `<section class="page-header"><div class="container"><h1>…</h1><p class="lead prose">…</p></div></section>` (tint band; every page except Home).
+   Then write sections as `<section class="section">` (add `section--tint` or `section--navy` for bands) with a `<div class="container">` inside. Use `container prose` for a centred reading column.
 3. One `<h1>` per page, then `<h2>` per section.
 4. Pull changing content from `src/_data/` (e.g. `{% for g in homeGroups.groups %}`), never hard-code it.
 5. The nav already links `/visit/ /about/ /media/ /home-groups/ /events/ /donate/ /contact/`; `/creeds/` is linked from Home (`#apostles`, `#nicene` anchors expected). Use these slugs.
@@ -65,6 +66,10 @@ Links: write root-relative URLs (`/visit/`, `/assets/img/x.png`). `HtmlBasePlugi
 - `--color-blue` (logo blue) is for accents, rules and the focus ring on white/tint; links use `--color-blue-dark` (currently the same value). On navy use `--color-blue-light`, since the logo blue doesn't show there.
 - Headings: `--font-serif`, navy. Body: `--font-sans`.
 - Components: `.button` (navy), `.button--light` (on navy bands), `.button--large`, `.more-link` ("More about … →"), `.lead`, `.prose`.
+  - `.page-header` (top band), `.cta` (centred navy call-to-action band: `section section--navy cta`, used on Home, Visit, Media)
+  - `.split` (2 columns from 48rem), `.cards` + `.card` (auto grid of white bordered boxes, ~3 across; `.cards--wide` caps at 2), `.card__title` (when a card's heading is an `h2`)
+  - `.details` (`<dl>` label/value grid), `.embed` (iframes: SoundCloud, map), `.map` (4:3), `.visually-hidden`
+- Maps: `site.address | mapEmbedUrl` (keyless Google Maps embed) and `| directionsUrl`.
 - Section bands alternate: white → `section--tint` / `section--navy`. Home: tint banner → navy CTA → white → tint.
 - **Placeholders:** `<span class="tbd">[TBD: …]</span>`, yellow highlight. Keep them visible; don't invent content.
 - Mobile nav: below 64rem the `<nav>` collapses behind a "Menu" button, a sibling placed just before it (`nav.js` + `.js` class set inline in `<head>`). Escape closes it. Without JS the nav wraps.
@@ -82,7 +87,7 @@ Links: write root-relative URLs (`/visit/`, `/assets/img/x.png`). `HtmlBasePlugi
 - Config: `.pages.yml` at the repo root. One editing screen per data file (church details, staff, elders & deacons, mission partners, home groups, HG calendar).
 - Editors sign in at https://app.pagescms.org. Either they use a GitHub account with write access to the repo, or (better for non-technical editors) the Pages CMS GitHub App is installed on the repo and they're invited as collaborators by email, with no GitHub account needed. Saving commits to `main`, which redeploys.
 - Service `day` is a dropdown and `start` must be 24-hour `HH:MM`, because both feed the schema.org markup.
-- Image uploads go to `src/assets/img/uploads/` and are stored as `/assets/img/uploads/<file>`. Put the existing home-group photos in `src/assets/img/uploads/home-groups/` so editors can pick or replace them.
+- Image uploads go to `src/assets/img/uploads/` and are stored as `/assets/img/uploads/<file>`. The home-group photos are in `src/assets/img/uploads/home-groups/<name>.jpg` (converted from the old site's WebP, max 1000px, shown square-cropped).
 - Pages CMS rewrites the YAML on save, so comments in data files may be lost. Don't put anything important in comments.
 - When you add or rename a data field, update `.pages.yml` to match.
 - Not yet tested against a live repo (needs the GitHub repo from Session 4).

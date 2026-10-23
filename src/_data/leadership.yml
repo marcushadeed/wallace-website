@@ -1,6 +1,30 @@
 # Elders and deacons shown on About. Names only.
-elders: []
-elders_sabbatical: []
-elders_emeritus: []
-deacons: []
-deacons_sabbatical: []
+elders:
+  - Rock Brockman
+  - Andy Cavanaugh
+  - Kerry Gilliard
+  - Dorry Kenyon
+  - Frank McGovern
+  - Marty Rabenhorst
+  - Charles Robinson
+elders_sabbatical:
+  - Joe Alder
+  - Terry Carman
+  - John Daly
+elders_emeritus:
+  - Bashir Khan
+deacons:
+  - Brecht Cantalice
+  - Doug Cookson
+  - Daniel Greco
+  - Jim Hessler
+  - Dan Lanterman
+  - Jon Mease
+  - Kyle Schick
+  - Irfan Timothy
+  - Ben VanDine
+  - Jansen VanderMeulen
+  - Bob Werth
+deacons_sabbatical:
+  - Chris Brady
+  - Adnan Timothy

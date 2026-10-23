@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+title: About
+description: "Meet the pastors, staff, elders and deacons of Wallace Presbyterian Church, and the mission partners we support."
+---
+<section class="page-header">
+  <div class="container">
+    <h1>About Us</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Staff</h2>
+    <ul class="people">
+      {%- for p in staff.staff %}
+      <li>
+        <span class="people__name">{{ p.name }}</span>
+        <span class="people__role">{{ p.role }}</span>
+        {%- if p.email %}
+        <a href="mailto:{{ p.email }}">{{ p.email }}</a>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container leadership">
+    <h2>Leadership</h2>
+    <div class="split">
+      <div>
+        <h3>Elders</h3>
+        <ul class="names names--cols">
+          {%- for name in leadership.elders %}<li>{{ name }}</li>{% endfor %}
+        </ul>
+        {%- if leadership.elders_sabbatical.length %}
+        <h4>On sabbatical</h4>
+        <ul class="names">
+          {%- for name in leadership.elders_sabbatical %}<li>{{ name }}</li>{% endfor %}
+        </ul>
+        {%- endif %}
+        {%- if leadership.elders_emeritus.length %}
+        <h4>Elder{% if leadership.elders_emeritus.length > 1 %}s{% endif %} emeritus</h4>
+        <ul class="names">
+          {%- for name in leadership.elders_emeritus %}<li>{{ name }}</li>{% endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+      <div>
+        <h3>Deacons</h3>
+        <ul class="names names--cols">
+          {%- for name in leadership.deacons %}<li>{{ name }}</li>{% endfor %}
+        </ul>
+        {%- if leadership.deacons_sabbatical.length %}
+        <h4>On sabbatical</h4>
+        <ul class="names">
+          {%- for name in leadership.deacons_sabbatical %}<li>{{ name }}</li>{% endfor %}
+        </ul>
+        {%- endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Mission Partners</h2>
+    {%- if missionPartners.partners.length %}
+    <ul class="cards">
+      {%- for m in missionPartners.partners %}
+      <li class="card">
+        <h3>{% if m.url %}<a href="{{ m.url }}">{{ m.name }}</a>{% else %}{{ m.name }}{% endif %}</h3>
+        {%- if m.field %}<p>{{ m.field }}</p>{% endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+    {%- else %}
+    <p><span class="tbd">[TBD: mission partners — name, field/location, link]</span></p>
+    {%- endif %}
+  </div>
+</section>

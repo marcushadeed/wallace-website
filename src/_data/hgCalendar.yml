@@ -1,9 +1,30 @@
 # Home Group calendar, shown below the group listings. Replaced yearly.
-title: ""
-intro: ""
-seasons: []
-#  - name: Fall Season (September–December)
-#    entries:
-#      - when: Week of September 13th
-#        what: Home Group Meeting #1
-#        note: ""   # optional, e.g. "Sunday groups should reschedule"
+# An entry with no "when" (e.g. "Break for Advent") shows as a break.
+title: Home Group Calendar, Fall 2026 – Spring 2027
+intro: |-
+  This calendar is a suggested template for Home Groups meeting twice a month. Home Groups are free to meet more often or on a different pattern, so long as they meet at least twice a month. This calendar is to provide you with structure, but we want you to be free to improvise on that.
+
+  If Home Groups desire more frequent fellowship, there are also other options beyond simply scheduling more regular meetings. Individuals in the group could go out for coffee to build one-on-one relationships. Or the group could go on fun activities or schedule a special party.
+seasons:
+  - name: Fall Season (September–December)
+    entries:
+      - { when: Week of September 13th, what: "Home Group Meeting #1", note: "" }
+      - { when: Week of September 27th, what: "Home Group Meeting #2", note: "" }
+      - { when: October 10th, what: HG training, note: "" }
+      - { when: Week of October 11th, what: "Home Group Meeting #3", note: "" }
+      - { when: Week of October 25th, what: "Home Group Meeting #4", note: "October 25th is Reformation Sunday. Sunday groups should reschedule." }
+      - { when: Week of November 8th, what: "Home Group Meeting #5", note: "" }
+      - { when: November 18th/19th, what: Home Group Leaders’ Appreciation Dinner, note: "" }
+      - { when: Week of November 22nd, what: "Home Group Meeting #6", note: "November 26th is Thanksgiving. Wed/Thurs groups should reschedule." }
+      - { when: "", what: Break for Advent, note: "" }
+  - name: Spring Season (January–May)
+    entries:
+      - { when: Week of January 31st, what: "Home Group Meeting #7", note: "" }
+      - { when: Week of February 14th, what: "Home Group Meeting #8", note: "February 14th is Valentine’s Day. Sunday groups might reschedule." }
+      - { when: Week of February 28th, what: "Home Group Meeting #9", note: "" }
+      - { when: Week of March 14th, what: "Home Group Meeting #10", note: "" }
+      - { when: "", what: Break for Easter, note: "" }
+      - { when: Week of April 4th, what: "Home Group Meeting #11", note: "" }
+      - { when: Week of April 18th, what: "Home Group Meeting #12", note: "" }
+      - { when: May 5th/6th, what: Home Group Leaders’ Appreciation Dinner, note: "" }
+      - { when: Week of May 2nd or 9th, what: "Home Group Meeting #13", note: "May 9th is Mothers’ Day, and May 5th/6th is the HG Leaders’ Appreciation Dinner. Depending on when a group meets, a different meeting week will make sense." }

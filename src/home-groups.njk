@@ -1,0 +1,80 @@
+---
+layout: layouts/base.njk
+title: Home Groups
+description: "Find a home group at Wallace Presbyterian Church: small groups meeting across the area for Bible study, prayer and fellowship. Sign up online."
+---
+{%- set coordinator = homeGroups.coordinator -%}
+<section class="page-header">
+  <div class="container">
+    <div class="prose">
+      <h1>Home Groups</h1>
+      <p class="lead">Home Groups are small groups that meet together regularly to build relationships that reflect God’s love. At Home Group, you may find yourselves eating together, studying the Bible, discussing the sermon or a book, or praying, but whatever you are doing, the overall goal is to know, love, and serve others.</p>
+      <p>The Bible tells us that God has put every individual in the church for a reason:</p>
+      <blockquote class="verse">
+        <p>“To each one is given the manifestation of the Spirit for the common good.”</p>
+        <cite>1 Corinthians 12:7</cite>
+      </blockquote>
+      <p>Home Groups help us build relationships so that we can use our gifts to build each other up.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Find a Group</h2>
+    {%- if coordinator.name %}
+    <p class="prose">Questions? Contact our Home Groups Coordinator, {{ coordinator.name }}, at <a href="mailto:{{ coordinator.email }}">{{ coordinator.email }}</a>.</p>
+    {%- endif %}
+    <ul class="cards">
+      {%- for g in homeGroups.groups %}
+      <li class="card group">
+        {%- if g.photo %}
+        <img class="group__photo" src="{{ g.photo }}" alt="{{ g.name }} Home Group hosts" width="600" height="600" loading="lazy">
+        {%- endif %}
+        <div class="group__body">
+          <h3>{{ g.name }} Home Group</h3>
+          <dl class="details">
+            {%- if g.focus %}<dt>Focus</dt><dd>{{ g.focus }}</dd>{% endif %}
+            {%- if g.when %}<dt>When</dt><dd>{{ g.when }}</dd>{% endif %}
+            {%- if g.frequency %}<dt>How often</dt><dd>{{ g.frequency }}</dd>{% endif %}
+            {%- if g.location %}<dt>Where</dt><dd>{{ g.location }}</dd>{% endif %}
+            {%- if g.childcare %}<dt>Children</dt><dd>{{ g.childcare }}</dd>{% endif %}
+          </dl>
+          {%- if g.signup_url %}
+          <a class="button" href="{{ g.signup_url }}">Sign up<span class="visually-hidden"> for the {{ g.name }} Home Group</span></a>
+          {%- endif %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{%- if hgCalendar.seasons.length %}
+<section class="section section--tint">
+  <div class="container">
+    <div class="prose">
+      <h2>{{ hgCalendar.title or "Home Group Calendar" }}</h2>
+      {%- for para in (hgCalendar.intro or "").split("\n\n") %}
+      {%- if para.trim() %}<p>{{ para.trim() }}</p>{% endif %}
+      {%- endfor %}
+    </div>
+    {%- for season in hgCalendar.seasons %}
+    <div class="calendar-season">
+      <h3>{{ season.name }}</h3>
+      <ul class="calendar">
+        {%- for e in season.entries %}
+        {%- if e.when %}
+        <li><span class="calendar__when">{{ e.when }}</span> <span>{{ e.what }}</span>
+          {%- if e.note %}<span class="calendar__note">Note: {{ e.note }}</span>{% endif %}</li>
+        {%- else %}
+        <li class="calendar__break"><span>{{ e.what }}</span>
+          {%- if e.note %}<span class="calendar__note">Note: {{ e.note }}</span>{% endif %}</li>
+        {%- endif %}
+        {%- endfor %}
+      </ul>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+{%- endif %}

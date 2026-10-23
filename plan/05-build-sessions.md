@@ -7,7 +7,7 @@ Each session runs in a fresh Claude Code session. Start it with:
 | Session | Scope | Status |
 |---|---|---|
 | 1 | Foundation + Home | ☑ 2026-10-22. Eleventy + Pages CMS. Data files staff/leadership/homeGroups/hgCalendar are empty for Session 2 to fill. The deploy workflow and Pages CMS are written but not tried against a real repo yet (Session 4) |
-| 2 | Visit, About, Home Groups, Media | ☐ |
+| 2 | Visit, About, Home Groups, Media | ☑ 2026-10-23. Data files filled. 8 home-group photos (the Chinese group never had one, not 9). Map and SoundCloud embeds don't render in headless Chrome; check them in a real browser. `[TBD]`s left: adult Sunday School, youth times/places, HATC address, mission partners |
 | 3 | Donate, Events, Contact, Creeds | ☐ |
 | 4 | Verification | ☐ |
 

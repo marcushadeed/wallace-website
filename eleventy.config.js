@@ -22,6 +22,14 @@ export default function (eleventyConfig) {
     return [...byDay].map(([day, items]) => `${day}s: ${items.join(" and ")}`).join("; ");
   });
 
+  // First item in a data list whose `key` equals `value`, e.g. staff.staff | findBy("role", "Facilities Manager").
+  eleventyConfig.addFilter("findBy", (list, key, value) => (list || []).find((item) => item[key] === value));
+
+  // Google Maps embed / directions URLs for an address from site.yml.
+  const addressQuery = (a) => encodeURIComponent(`${a.street}, ${a.city}, ${a.region} ${a.postal_code}`);
+  eleventyConfig.addFilter("mapEmbedUrl", (a) => `https://maps.google.com/maps?q=${addressQuery(a)}&output=embed`);
+  eleventyConfig.addFilter("directionsUrl", (a) => `https://www.google.com/maps/dir/?api=1&destination=${addressQuery(a)}`);
+
   // Every page with the base layout needs a meta description; fail the build without one.
   eleventyConfig.addFilter("requireDescription", (description, inputPath) => {
     if (!description) throw new Error(`Missing "description" front matter in ${inputPath}`);

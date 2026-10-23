@@ -70,7 +70,7 @@ content:
         list: true
         fields:
           - { name: name, label: Name, type: string }
-          - { name: role, label: Role, type: string }
+          - { name: role, label: Role, type: string, description: "Plan Your Visit names the \"Facilities Manager\" for accessibility questions" }
           - { name: email, label: Email, type: string }
 
   - name: leadership
@@ -142,6 +142,6 @@ content:
             type: object
             list: true
             fields:
-              - { name: when, label: When, type: string, description: "e.g. Week of September 13th" }
+              - { name: when, label: When, type: string, description: "e.g. Week of September 13th. Leave blank for a break, e.g. Break for Advent" }
               - { name: what, label: What, type: string }
               - { name: note, label: Note, type: string, description: Optional }
