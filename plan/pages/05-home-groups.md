@@ -1,6 +1,6 @@
 # Home Groups `/home-groups`
 
-Source: `03-page-index.md`, answers in `04-open-questions.md`.
+Source: `../content-inventory.md`, answers in `04-open-questions.md`.
 
 | Section | Content |
 |---|---|
@@ -8,6 +8,8 @@ Source: `03-page-index.md`, answers in `04-open-questions.md`.
 | Coordinator | Jamie Duguid, duguid@wallacepca.org (repeated here in context, and on Contact) |
 | Group listings | 9 groups from structured data: name, focus, day/time, frequency, location, childcare, photo, Breeze sign-up link (Chinese-group link and "Iszler" spelling fixed). Keep the existing 9 group photos |
 | HG calendar | Yearly schedule, below the listings ("Novermber" fixed) |
+
+Current group data: `../content-inventory.md` §3 (photo folder in §7).
 
 Group listings and the HG calendar are replaced yearly and must be editable by a non-technical person.
 

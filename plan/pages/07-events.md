@@ -1,6 +1,6 @@
 # Events `/events`
 
-Source: `03-page-index.md`, answers in `04-open-questions.md`.
+Source: `../content-inventory.md`, answers in `04-open-questions.md`.
 Renamed from Calendar. Own page; only if the church keeps a Google Calendar.
 
 | Section | Content |

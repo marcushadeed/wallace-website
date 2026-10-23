@@ -27,7 +27,7 @@ Marked `[TBD: …]` in the page files.
 
 | Page | Placeholder |
 |---|---|
-| Site-wide, Contact | Newsletter signup link (after Q17) |
+| Site-wide, Contact | Newsletter signup link (after Q2) |
 | Site-wide | SVG logo (Marcus making it; PNG until then) |
 | Home | Short "About us" paragraph |
 | Visit | Adult Sunday School classes (to be consolidated) |
@@ -37,7 +37,7 @@ Marked `[TBD: …]` in the page files.
 | Visit | Youth women's Bible study: time and location |
 | About | Mission partners: name, field/location, link (leave out or anonymize security-sensitive ones) |
 | Donate | Deacon Fund contact (name/email) |
-| Events | Google Calendar embed URL (after Q16) |
+| Events | Google Calendar embed URL (after Q1) |
 | All pages | Approve the draft meta descriptions |
 
 ---

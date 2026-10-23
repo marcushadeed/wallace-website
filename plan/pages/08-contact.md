@@ -1,6 +1,6 @@
 # Contact `/contact`
 
-Source: `03-page-index.md`, answers in `04-open-questions.md`.
+Source: `../content-inventory.md`, answers in `04-open-questions.md`.
 
 | Section | Content |
 |---|---|

@@ -1,7 +1,13 @@
 # Site-wide (every page)
 
-Source: `03-page-index.md`, answers in `04-open-questions.md`.
+Source: `../content-inventory.md`, answers in `04-open-questions.md`.
 `[TBD: …]` marks a placeholder still to be filled in (listed in `04-open-questions.md`).
+
+## Guiding rule: minimal maintenance
+- Stable URLs with no years in them (`/home-groups`, not `/home-groups-2026`)
+- Prefer links and embeds that update themselves (YouTube, SoundCloud, Spotify, a Drive file overwritten in place)
+- Content that changes each year goes in structured data, separate from layout
+- Leave out anything that goes stale unless someone maintains it
 
 ## Header
 - Logo → `/`. Use the existing PNG for now; Marcus is making an SVG version. On Home the banner replaces the header logo, so it doesn't appear twice; the nav stays
@@ -24,6 +30,14 @@ Source: `03-page-index.md`, answers in `04-open-questions.md`.
 | `/home-groups-2026` | `/home-groups` |
 | `/labor-day` | `/events` (or `/` if there's no Events page) |
 | `/new-page`, `/projects`, `/cart` | `/` |
+
+## Not on the site (decided)
+| Item | Why |
+|---|---|
+| Prayer requests | No one is set up to monitor them |
+| Church history, students / campus ministry | Left out by choice |
+| Membership class dates, holiday service times | Go stale (holiday times can go on the Events calendar) |
+| Wedding / facility rental | Out of scope |
 
 ## Build & hosting
 - Static site generator with content in data files; whichever is easiest and free
