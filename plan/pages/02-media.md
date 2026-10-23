@@ -1,4 +1,4 @@
-# Sermons & Media `/sermons`
+# Sermons & Media `/media`
 
 Source: `03-page-index.md`, answers in `04-open-questions.md`.
 

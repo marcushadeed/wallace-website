@@ -10,7 +10,7 @@ Source: `03-page-index.md`, answers in `04-open-questions.md`.
 | Accessibility | Step-free entrance, elevator, hearing assistance. Questions → Bob Werth, Facilities Manager, facilitiesmanager@wallacepca.org |
 | Children & youth | See below. General terms only (no topics or teacher names) |
 | Map | Google Maps embed |
-| Can't make it? | Link → `/sermons` |
+| Can't make it? | Link → `/media` |
 
 ## Children & youth
 - **Nursery:** infants to 3 years old, during Sunday School and the whole service. First floor, children's wing

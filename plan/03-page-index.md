@@ -5,7 +5,7 @@ Each page's plan is in its own file under `pages/`.
 
 - [Site-wide: header, footer, metadata, redirects, build](pages/00-site-wide.md)
 1. [Home `/`](pages/01-home.md)
-2. [Sermons & Media `/sermons`](pages/02-sermons.md)
+2. [Sermons & Media `/media`](pages/02-sermons.md)
 3. [Plan Your Visit `/visit`](pages/03-visit.md)
 4. [About `/about`](pages/04-about.md)
 5. [Home Groups `/home-groups`](pages/05-home-groups.md)
