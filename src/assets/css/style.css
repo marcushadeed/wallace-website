@@ -216,6 +216,7 @@ a:hover { color: var(--color-navy); }
 /* Two columns from 48rem up (text + map, etc.). */
 .split { display: grid; gap: var(--space-l); align-items: start; }
 @media (min-width: 48rem) { .split { grid-template-columns: 1fr 1fr; } }
+h2 + .split { margin-top: var(--space-m); }  /* columns under a section heading */
 
 /* Grid of bordered boxes. White, so they also stand out on tint bands. */
 .cards {
@@ -251,6 +252,16 @@ a:hover { color: var(--color-navy); }
   clip-path: inset(50%); white-space: nowrap;
 }
 
+/* List of people with role and email (About staff, Contact). */
+.people { display: grid; gap: var(--space-m); grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); list-style: none; padding: 0; }
+.people li { border-left: 4px solid var(--color-blue); padding-left: var(--space-s); }
+.people__name { display: block; font-weight: 700; color: var(--color-navy); }
+.people__role { display: block; color: var(--color-muted); }
+.people a { overflow-wrap: anywhere; }
+
+/* Small secondary text: side notes, small links. */
+.fine-print { font-size: var(--step--1); color: var(--color-muted); }
+
 /* Visible placeholder for content still to come. Keep [TBD: …] text inside. */
 .tbd {
   background: var(--color-tbd-bg); color: var(--color-tbd-ink);
@@ -277,11 +288,6 @@ a:hover { color: var(--color-navy); }
 }
 
 /* ---------- About ---------- */
-.people { display: grid; gap: var(--space-m); grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr)); list-style: none; padding: 0; }
-.people li { border-left: 4px solid var(--color-blue); padding-left: var(--space-s); }
-.people__name { display: block; font-weight: 700; color: var(--color-navy); }
-.people__role { display: block; color: var(--color-muted); }
-.people a { overflow-wrap: anywhere; }
 .names { padding-left: 1.2em; }
 .names--cols { columns: 2 12rem; }
 .names li { break-inside: avoid; }
@@ -304,3 +310,20 @@ a:hover { color: var(--color-navy); }
 @media (min-width: 40rem) { .calendar__note { grid-column: 2; } }
 .calendar__break { font-style: italic; color: var(--color-muted); }
 .calendar__break > span:first-child { grid-column: 1 / -1; }
+
+/* ---------- Donate ---------- */
+/* Important warning (ACH/EFT): white box with a navy rule, on a tint band. */
+.notice {
+  margin-top: var(--space-l); padding: var(--space-m);
+  background: var(--color-bg); border-left: 6px solid var(--color-navy); border-radius: var(--radius);
+}
+.notice h3 { font-size: var(--step-1); }
+
+/* ---------- Events ---------- */
+.calendar-embed { height: 40rem; }
+
+/* ---------- Creeds ---------- */
+.creed p { font-family: var(--font-serif); font-size: var(--step-1); }
+
+/* ---------- Contact ---------- */
+.contact-staff { margin-top: var(--space-l); }

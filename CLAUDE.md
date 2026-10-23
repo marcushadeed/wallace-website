@@ -11,6 +11,7 @@ Run from `new_site/` (Node 24, already installed via nvm).
 - `npm run build`: build to `_site/`
 - Test a GitHub Pages sub-path build: `PATH_PREFIX=/repo/ SITE_URL=https://user.github.io/repo SITE_NOINDEX=true npm run build`
 - Deploy: push to `main`; `.github/workflows/deploy.yml` builds and deploys. `new_site/` is meant to be the repo root. One-time repo setting: Settings → Pages → Source: GitHub Actions. Not deployed yet (Session 4).
+- Preview at phone width: `google-chrome --headless=new --hide-scrollbars --window-size=390,3200 --screenshot=out.png <url>`. Headless Chrome's minimum viewport is 500px, so a `scrollWidth` check reads 500, not 390; trust the screenshot.
 
 ## Where things live
 | What | Where |
@@ -30,13 +31,13 @@ Run from `new_site/` (Node 24, already installed via nvm).
 ### Data files
 | File | Used by | Status |
 |---|---|---|
-| `site.yml` | header, footer, schema.org, Visit/Contact | filled. Service times live here (`services`); `newsletter_url` empty until open question 2 |
+| `site.yml` | header, footer, schema.org, Visit, Donate, Events, Contact | filled. Service times live here (`services`). `giving` (title + email: Donate's "ATTN:" line, Contact) is the Assistant Treasurer pending open question 6. Empty until answered, each showing a `[TBD]`: `newsletter_url` (Q2), `deacon_fund_contact` (Donate), `calendar_embed_url` (Events, Q1) |
 | `nav.yml` | header nav | filled (7 items). Not in the CMS |
 | `redirects.yml` | redirect pages | filled. Not in the CMS |
-| `staff.yml` | About, Visit, Contact | filled (10 staff). Visit finds the accessibility contact by role `Facilities Manager` (falls back to `site.email`) |
+| `staff.yml` | About, Visit, Contact | filled (10 staff). Visit and Contact find the accessibility contact by role `Facilities Manager` (falls back to `site.email`) |
 | `leadership.yml` | About | filled |
 | `missionPartners.yml` | About | empty, `[TBD]` until Marcus supplies partners |
-| `homeGroups.yml` | Home Groups (Contact should reuse `coordinator`) | filled (coordinator + 9 groups). The Chinese Language group has no photo |
+| `homeGroups.yml` | Home Groups, Contact (`coordinator`) | filled (coordinator + 9 groups). The Chinese Language group has no photo |
 | `hgCalendar.yml` | Home Groups | filled (Fall 2026 – Spring 2027). `intro` paragraphs split on blank lines; an entry with empty `when` renders as a break ("Break for Advent"). The section hides when `seasons` is empty |
 
 `missionPartners.yml` keeps a commented example of its shape. The field names must match `.pages.yml`.
@@ -55,7 +56,7 @@ Run from `new_site/` (Node 24, already installed via nvm).
    Then write sections as `<section class="section">` (add `section--tint` or `section--navy` for bands) with a `<div class="container">` inside. Use `container prose` for a centred reading column.
 3. One `<h1>` per page, then `<h2>` per section.
 4. Pull changing content from `src/_data/` (e.g. `{% for g in homeGroups.groups %}`), never hard-code it.
-5. The nav already links `/visit/ /about/ /media/ /home-groups/ /events/ /donate/ /contact/`; `/creeds/` is linked from Home (`#apostles`, `#nicene` anchors expected). Use these slugs.
+5. All pages exist: `/visit/ /about/ /media/ /home-groups/ /events/ /donate/ /contact/` (nav) and `/creeds/` (linked from Home's What We Believe, `#believe`, via `#apostles` / `#nicene`).
 6. `npm run build`, then preview at phone width (no sideways scroll) and desktop.
 
 Links: write root-relative URLs (`/visit/`, `/assets/img/x.png`). `HtmlBasePlugin` adds the GitHub Pages sub-path automatically in `href`/`src`. For absolute URLs (OG, canonical, meta refresh, JSON-LD) use `{{ build.url }}` + path.
@@ -68,9 +69,12 @@ Links: write root-relative URLs (`/visit/`, `/assets/img/x.png`). `HtmlBasePlugi
 - Components: `.button` (navy), `.button--light` (on navy bands), `.button--large`, `.more-link` ("More about … →"), `.lead`, `.prose`.
   - `.page-header` (top band), `.cta` (centred navy call-to-action band: `section section--navy cta`, used on Home, Visit, Media)
   - `.split` (2 columns from 48rem), `.cards` + `.card` (auto grid of white bordered boxes, ~3 across; `.cards--wide` caps at 2), `.card__title` (when a card's heading is an `h2`)
-  - `.details` (`<dl>` label/value grid), `.embed` (iframes: SoundCloud, map), `.map` (4:3), `.visually-hidden`
+  - `.details` (`<dl>` label/value grid), `.embed` (iframes: SoundCloud, map, calendar), `.map` (4:3), `.visually-hidden`
+  - `.people` (name / role / email list: About staff, Contact), `.fine-print` (small muted text), `.notice` (white box with navy rule for warnings; Donate's ACH note)
+  - `h2 + .split` gets top spacing, so a section heading can sit over two columns
 - Maps: `site.address | mapEmbedUrl` (keyless Google Maps embed) and `| directionsUrl`.
 - Section bands alternate: white → `section--tint` / `section--navy`. Home: tint banner → navy CTA → white → tint.
+- Creeds use the traditional (BCP / Trinity Hymnal) wording, chosen in Session 3; swap if the church uses another version.
 - **Placeholders:** `<span class="tbd">[TBD: …]</span>`, yellow highlight. Keep them visible; don't invent content.
 - Mobile nav: below 64rem the `<nav>` collapses behind a "Menu" button, a sibling placed just before it (`nav.js` + `.js` class set inline in `<head>`). Escape closes it. Without JS the nav wraps.
 - Add page-specific CSS at the end of `style.css` under a `/* ---------- <Page> ---------- */` heading.

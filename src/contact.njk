@@ -1,0 +1,89 @@
+---
+layout: layouts/base.njk
+title: Contact
+description: "Contact Wallace Presbyterian Church: phone, email, address and directions, plus staff contacts and newsletter signup."
+---
+{%- set facilities = staff.staff | findBy("role", "Facilities Manager") -%}
+{%- set coordinator = homeGroups.coordinator -%}
+<section class="page-header">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p class="lead prose">Call, email or stop by. We’d love to hear from you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div>
+      <h2>Get in Touch</h2>
+      <dl class="details lead">
+        <dt>Phone</dt>
+        <dd><a href="{{ site.phone | telHref }}">{{ site.phone }}</a></dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:{{ site.email }}">{{ site.email }}</a></dd>
+      </dl>
+    </div>
+    <div>
+      <h2>Find Us</h2>
+      <address class="lead">
+        {{ site.name }}<br>
+        {{ site.address.street }}<br>
+        {{ site.address.city }}, {{ site.address.region }} {{ site.address.postal_code }}
+      </address>
+      <p><a class="more-link" href="{{ site.address | directionsUrl }}">Get directions →</a></p>
+      <p>See <a href="/visit/">Plan Your Visit</a> for a map, parking and what to expect.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    <h2>Who to Contact</h2>
+    <ul class="people">
+      <li>
+        <span class="people__name">Giving</span>
+        <span class="people__role">{{ site.giving.title }}</span>
+        <a href="mailto:{{ site.giving.email }}">{{ site.giving.email }}</a>
+      </li>
+      {%- if coordinator.email %}
+      <li>
+        <span class="people__name">Home Groups</span>
+        <span class="people__role">{{ coordinator.name }}, Coordinator</span>
+        <a href="mailto:{{ coordinator.email }}">{{ coordinator.email }}</a>
+      </li>
+      {%- endif %}
+      {%- if facilities %}
+      <li>
+        <span class="people__name">Accessibility &amp; facilities</span>
+        <span class="people__role">{{ facilities.name }}, {{ facilities.role }}</span>
+        <a href="mailto:{{ facilities.email }}">{{ facilities.email }}</a>
+      </li>
+      {%- endif %}
+    </ul>
+
+    <h3 class="contact-staff">Staff</h3>
+    <ul class="people">
+      {%- for p in staff.staff %}
+      <li>
+        <span class="people__name">{{ p.name }}</span>
+        <span class="people__role">{{ p.role }}</span>
+        {%- if p.email %}
+        <a href="mailto:{{ p.email }}">{{ p.email }}</a>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--navy cta">
+  <div class="container">
+    <h2>Newsletter</h2>
+    <p class="lead prose">Get church news and announcements by email.</p>
+    {%- if site.newsletter_url %}
+    <a class="button button--light button--large" href="{{ site.newsletter_url }}">Sign up for the newsletter</a>
+    {%- else %}
+    <p><span class="tbd">[TBD: newsletter signup link]</span></p>
+    {%- endif %}
+  </div>
+</section>

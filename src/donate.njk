@@ -1,0 +1,79 @@
+---
+layout: layouts/base.njk
+title: Give
+description: "Give to Wallace Presbyterian Church online, by check, Bill Pay or in person, including gifts to the Deacon Fund."
+---
+{%- set giving = site.giving -%}
+{%- set deacon = site.deacon_fund_contact -%}
+<section class="page-header">
+  <div class="container">
+    <h1>Give</h1>
+    <p class="lead prose">You can give in person during Sunday worship, by mail, or online with a credit or debit card. Questions? Email our {{ giving.title | lower }} at <a href="mailto:{{ giving.email }}">{{ giving.email }}</a>.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2>Give Online</h2>
+    <p class="prose">Choose a fund below. You’ll be taken to PayPal to complete your gift.</p>
+    <div class="cards cards--wide">
+      <div class="card">
+        <h3>General Fund</h3>
+        <a class="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=C3J2B3F7UYA7A">Give to the General Fund</a>
+      </div>
+      <div class="card">
+        <h3>Deacon Fund</h3>
+        <p>The Deacon Fund helps meet temporary financial needs. If you need help, contact
+          {%- if deacon.email %} {{ deacon.name or "the deacons" }} at <a href="mailto:{{ deacon.email }}">{{ deacon.email }}</a>.
+          {%- else %} <span class="tbd">[TBD: Deacon Fund contact name/email]</span>.
+          {%- endif %}</p>
+        <a class="button" href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=6H6NLKE8QFYJA">Give to the Deacon Fund</a>
+      </div>
+    </div>
+    <div class="prose embed-after">
+      <p>PayPal deducts a 1.99% fee from each gift. We see it as a necessary expense, like printing offering envelopes. If you’d like to cover it, add about 2% to your gift (about $2 for every $100).</p>
+      <p class="fine-print">New to PayPal? <a href="https://www.paypal.com/webapps/mpp/how-paypal-works">How PayPal works</a> · <a href="https://www.paypal.com/webapps/mpp/paypal-popup">What is PayPal?</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint">
+  <div class="container">
+    <h2>Give by Check</h2>
+    <div class="split">
+      <div>
+        <h3>Checks</h3>
+        <p>Place a check in the offering plate on Sunday, or mail it to:</p>
+        <address class="lead">
+          {{ site.name }}<br>
+          ATTN: {{ giving.title }}<br>
+          {{ site.address.street }}<br>
+          {{ site.address.city }}, {{ site.address.region }} {{ site.address.postal_code }}
+        </address>
+      </div>
+      <div>
+        <h3>Bill Pay</h3>
+        <p>Set up Wallace as a payee in your bank’s bill pay, using the name and address under Checks. Enter the word “offering” where you’re asked for an account number. Your bank will mail us a check.</p>
+      </div>
+    </div>
+    <div class="notice prose">
+      <h3>Please don’t send bank transfers (ACH or EFT)</h3>
+      <p>Please don’t send gifts directly to Wallace’s bank account. If you’re asked for the church’s account and routing numbers, stop there. These transfers bypass our {{ giving.title | lower }}, so your gift would <strong>not</strong> be recorded or included in the giving statements we send each January for tax purposes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container prose">
+    <h2>Give Cash</h2>
+    <p>Place cash in the offering plate on Sunday. To have your gift recorded and receipted for tax purposes, write your name on it or use an offering envelope. Numbered and dated offering envelopes are available from our {{ giving.title | lower }}.</p>
+  </div>
+</section>
+
+<section class="section section--navy cta">
+  <div class="container">
+    <h2>Questions About Giving?</h2>
+    <p class="lead prose">Our {{ giving.title | lower }} is happy to help.</p>
+    <a class="button button--light button--large" href="mailto:{{ giving.email }}">Email the {{ giving.title | lower }}</a>
+  </div>
+</section>

@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+title: Events
+description: "Upcoming events, retreats and holiday service times at Wallace Presbyterian Church in College Park, MD."
+---
+<section class="page-header">
+  <div class="container">
+    <h1>Events</h1>
+    <p class="lead prose">Upcoming events, retreats and holiday service times.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="visually-hidden">Calendar</h2>
+    {%- if site.calendar_embed_url %}
+    <iframe class="embed calendar-embed" src="{{ site.calendar_embed_url }}" title="{{ site.name }} events calendar" loading="lazy"></iframe>
+    {%- else %}
+    <p><span class="tbd">[TBD: Google Calendar embed URL]</span></p>
+    {%- endif %}
+  </div>
+</section>

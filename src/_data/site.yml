@@ -33,3 +33,13 @@ social:
     url: https://www.instagram.com/wallacepresbyterian/
 # Leave empty until it's decided what sends the newsletter (open question 2).
 newsletter_url: ""
+# Donate and Contact: who handles gifts (mailed checks go "ATTN: <title>").
+giving:
+  title: Assistant Treasurer
+  email: assistanttreasurer@wallacepca.org
+# Donate: who to contact for help from the Deacon Fund. Empty shows a [TBD].
+deacon_fund_contact:
+  name: ""
+  email: ""
+# Events: Google Calendar embed URL. Empty shows a [TBD] (open question 1).
+calendar_embed_url: ""

@@ -58,6 +58,22 @@ content:
           - { name: name, label: Name, type: string }
           - { name: url, label: Link, type: string }
       - { name: newsletter_url, label: Newsletter signup link, type: string }
+      - name: giving
+        label: Giving contact (Donate, Contact)
+        type: object
+        fields:
+          - { name: title, label: Title, type: string, description: "Mailed checks are addressed \"ATTN: <title>\"" }
+          - { name: email, label: Email, type: string }
+      - name: deacon_fund_contact
+        label: Deacon Fund contact (Donate)
+        type: object
+        fields:
+          - { name: name, label: Name, type: string }
+          - { name: email, label: Email, type: string }
+      - name: calendar_embed_url
+        label: Events calendar embed link
+        type: string
+        description: "Google Calendar → Settings → Integrate calendar → Embed code: the https://calendar.google.com/calendar/embed?src=… link inside src=\"…\""
 
   - name: staff
     label: Staff
